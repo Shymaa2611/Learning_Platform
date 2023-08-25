@@ -1,6 +1,6 @@
-from .models import Course
 from django import forms
-class courseForm(forms.ModelForm):
+from .models import Contact
+class contactForm(forms.ModelForm):
     class Meta:
-        model=Course
+        model=Contact
         fields='__all__'

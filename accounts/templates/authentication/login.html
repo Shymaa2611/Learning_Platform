@@ -1,0 +1,40 @@
+
+<div class="form-box register">
+    <!-- <h4 class="animation" style="--i: 17; --j: 0; margin-top: 20px">
+      SignUp
+    </h4> -->
+    <h4 class="animation" style="--i: 17; --j: 0">SignIn</h4>
+
+    <form action="#" method="post">
+        {%csrf_token%}
+      <div class="input-box animation" style="--i: 18; --j: 1">
+       {{form.email}}
+        <label>Email</label>
+        <i class="bx bxs-envelope"></i>
+      </div>
+      <div class="input-box animation" style="--i: 19; --j: 2">
+        {{form.password}}
+        <label>Password</label>
+        <i class="bx bxs-lock-alt"></i>
+      </div>
+
+      <button type="submit" class="btn animation" style="--i: 22; --j: 5">
+        Login
+      </button>
+      <div class="logreg-link animation" style="--i: 23; --j: 6">
+        <!-- <p>
+          Already amember ?
+          <a href="#" class="login-link animation">LogIn</a>
+        </p> -->
+        <p>
+          Not Registered ?
+          <a href="{%url 'signUp'%}" class="login-link animation">Create an account</a>
+        </p>
+      </div>
+    </form>
+  </div>
+  <div class="info-text register">
+    <!-- <h2 class="animation" style="--i: 17; --j: 0">HELp</h2> -->
+    <h2 class="animation" style="--i: 18; --j: 1; color: #fff">Welcome</h2>
+  </div>
+</div>

@@ -1,15 +1,23 @@
-from django.shortcuts import render
-from django.views.generic import ListView,CreateView
-from .models import Course,Module,Subject
-from .forms import courseForm
-class list_course(ListView):
-    model=Course
-    template_name='list.html'
+from django.shortcuts import render,redirect
+from .models import Contact
+from .forms import contactForm
 
-class create_new_course(CreateView):
-    model=Course
-    form_class=courseForm
-    template_name='create_course.html'
-    context_object_name='form'
-    success_url='/'
+def index(request):
+    return render(request,'pages/index.html')
 
+def about(request):
+    return render(request,'pages/aboutus.html')
+
+
+def contact(request):
+    if request.method=='POST':
+        form=contactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
+    else:
+        form=contactForm()
+    context={
+        'form':form
+    }
+    return render(request,'pages/contact.html',context)

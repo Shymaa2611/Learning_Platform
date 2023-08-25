@@ -1,0 +1,252 @@
+@import url("https://fonts.googleapis.com/css2?family=Alexandria:wght@400;600&family=Dancing+Script&family=Poppins:ital,wght@1,300;1,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+:root {
+  --glass-bg: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.3)
+  );
+}
+.body {
+  /* background: url(IMG/image11.jfif); */
+  background-color: #465358;
+}
+.body-active {
+  background-color: #7e7e96;
+}
+.iconLight {
+  color: white;
+  position: fixed;
+  top: 5px;
+  left: 10px;
+  /* background-color: #000; */
+  border-radius: 50%;
+  padding: 3px 10px;
+}
+.iconLight:hover {
+  cursor: pointer;
+  background-color: transparent;
+}
+section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  /* background: #128deb; */
+}
+section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  /* background: #09b1ff; */
+}
+section .container {
+  position: relative;
+  min-width: 1100px;
+  min-height: 550px;
+  display: flex;
+  z-index: 1000;
+}
+section .container .contactinfo {
+  position: absolute;
+  top: 40px;
+  /* left: 100px; */
+  width: 350px;
+  height: calc(100% - 80px);
+  background: #4f5b5f;
+  z-index: 1;
+  padding: 40px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
+}
+section .container .contactinfo-active {
+  position: absolute;
+  top: 40px;
+  /* left: 100px; */
+  width: 350px;
+  height: calc(100% - 80px);
+  background: #718697;
+  z-index: 1;
+  padding: 40px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
+}
+section .container .contactinfo h2 {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 500;
+}
+section .container .contactinfo .info {
+  position: relative;
+  margin: 20px 0;
+}
+section .container .contactinfo .info li {
+  position: relative;
+  list-style: none;
+  display: flex;
+  margin: 20px 0;
+  cursor: pointer;
+  align-items: flex-start;
+}
+section .container .contactinfo .info li span:nth-child(1) {
+  width: 30px;
+  min-width: 30px;
+}
+section .container .contactinfo .info li span:nth-child(1) img {
+  max-width: 100%;
+  filter: invert(1);
+  opacity: 0.8;
+}
+section .container .contactinfo .info li span:nth-child(2) {
+  color: #fff;
+  margin-left: 10px;
+  font-weight: 300;
+  opacity: 0.8;
+}
+section .container .contactinfo .info li:hover span:nth-child(1) img,
+section .container .contactinfo .info li:hover span:nth-child(2) {
+  opacity: 1;
+}
+section .container .contactinfo .sci {
+  position: relative;
+  display: flex;
+  margin-left: 20px;
+  /* margin-top: -25px; */
+  /* justify-content: space-around; */
+}
+section .container .contactinfo .sci li {
+  list-style: none;
+  margin-right: 20px;
+  margin-top: -70px;
+}
+section .container .contactinfo .sci li a {
+  text-decoration: none;
+}
+section .container .contactinfo .sci li a img {
+  filter: invert(1);
+  opacity: 0.8;
+  width: 25px;
+  height: 25px;
+}
+section .container .contactinfo .sci li:hover a img {
+  opacity: 1;
+}
+section .container .contactForm {
+  position: absolute;
+  padding: 70px 50px;
+  background: #fff;
+  margin-left: 150px;
+  padding-left: 250px;
+  /* margin-top: 50px; */
+  width: calc(100% - 150px);
+  height: 100%;
+  box-shadow: 0 50px 50px rgba(0, 0, 0, 0.5);
+}
+section .container .contactForm .sendMessage {
+  color: #08f858;
+  font-size: 24px;
+  font-weight: 500;
+}
+section .container .contactForm .sendMessage-active {
+  color: #128deb;
+  font-size: 24px;
+  font-weight: 500;
+}
+section .container .contactForm .formBox {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-top: 30px;
+}
+section .container .contactForm .formBox .inputBox {
+  position: relative;
+  margin: 0 0 35px 0;
+}
+section .container .contactForm .formBox .inputBox.w50 {
+  width: 47%;
+}
+section .container .contactForm .formBox .inputBox.w100 {
+  width: 100%;
+}
+section .container .contactForm .formBox .inputBox input,
+section .container .contactForm .formBox .inputBox textarea {
+  width: 100% !important;
+  padding: 5px 0;
+  font-size: 18px;
+  font-weight: 300;
+  color: #333;
+  border: none;
+  border-bottom: 1px solid #777;
+  outline: none;
+}
+section .container .contactForm .formBox .inputBox textarea {
+  min-height: 120px;
+}
+section .container .contactForm .formBox .inputBox span {
+  position: absolute;
+  left: 0;
+  padding: 5px 0;
+  font-size: 18px;
+  font-weight: 300;
+  color: #333;
+  transition: 0.3s;
+  pointer-events: none;
+}
+section .container .contactForm .formBox .inputBox input:focus ~ span,
+section .container .contactForm .formBox .inputBox textarea:focus ~ span,
+section .container .contactForm .formBox .inputBox input:valid ~ span,
+section .container .contactForm .formBox .inputBox textarea:valid ~ span {
+  transform: translateY(-20px);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: #031c35;
+}
+section .container .contactForm .formBox .inputBox .submitBtn {
+  position: relative;
+  cursor: pointer;
+  /* background: #9fc7ee; */
+  background: rgb(16, 185, 16);
+  /* background: #128deb; */
+  color: #fff;
+  border: none;
+  max-width: 150px;
+  padding: 12px;
+}
+section .container .contactForm .formBox .inputBox .submitBtn-active {
+  position: relative;
+  cursor: pointer;
+  /* background: #9fc7ee; */
+  /* background: rgb(16, 185, 16); */
+  background: #128deb;
+  color: #fff;
+  border: none;
+  max-width: 150px;
+  padding: 12px;
+}
+section .container .contactForm .formBox .inputBox .submitBtn:hover {
+  /* background: #128deb; */
+  background: #5dbe6d;
+  /* background: #5d8ebe; */
+  color: #fff;
+}
+section .container .contactForm .formBox .inputBox .submitBtn:hover {
+  /* background: #128deb; */
+  /* background: #5dbe6d; */
+  background: #5d8ebe;
+  color: #fff;
+}
