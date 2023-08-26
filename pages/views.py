@@ -3,11 +3,15 @@ from .models import Contact,Blog
 from .forms import contactForm
 
 
-def index(request):
-    return render(request,'pages/index.html')
+def home(request):
+    return render(request,'pages/home.html')
 
 def about(request):
     return render(request,'pages/aboutus.html')
+
+def chat(request):
+    return render(request,'pages/chat.html')
+
 
 
 def contact(request):

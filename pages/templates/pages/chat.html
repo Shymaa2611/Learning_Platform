@@ -1,0 +1,101 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'css/chat.css' %}" />
+    <title>Chat</title>
+  </head>
+  <body>
+    <section id="content">
+      <main>
+        <div class="data">
+          <div class="content-data">
+          <div class="content-data">
+            <div class="head">
+              <h3>chatBot</h3>
+              <!-- <div class="menu">
+                <i class="bx bx-dots-horizontal-rounded icon"></i>
+                <ul class="menu-link">
+                  <li><a href="#">edit</a></li>
+                  <li><a href="#">save</a></li>
+                  <li><a href="#">remove</a></li>
+                </ul>
+              </div> -->
+            </div>
+            <div class="chat-box">
+              <p class="day"><span>today</span></p>
+              <div class="msg">
+                <img src="{% static 'IMG/IMG.jpg' %}" alt="" />
+                <div class="chat">
+                  <div class="profile">
+                    <span class="username">Yasmen</span>
+                    <span class="time">18:30</span>
+                  </div>
+                  <p>hello</p>
+                </div>
+              </div>
+              <div class="msg me">
+                <div class="chat">
+                  <div class="profile">
+                    <span class="time">20:30</span>
+                  </div>
+                  <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Consectetur voluptates ut quis quae, quidem obcaecati.
+                  </p>
+                </div>
+              </div>
+              <div class="msg me">
+                <div class="chat">
+                  <div class="profile">
+                    <span class="time">19:30</span>
+                  </div>
+                  <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Reiciendis, quae?
+                  </p>
+                </div>
+              </div>
+              <div class="msg me">
+                <div class="chat">
+                  <div class="profile">
+                    <span class="time">18:30</span>
+                  </div>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  </p>
+                </div>
+              </div>
+
+              <div class="msg me">
+                <div class="chat">
+                  <div class="profile">
+                    <span class="time">17:30</span>
+                  </div>
+                  <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+              </div>
+            </div>
+            <form action="#">
+              <div class="form-group">
+                <input type="text" placeholder="Type....." />
+                <button type="submit" class="btn-send">
+                  <i class="bx bxs-send"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </main>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+   
+  </body>
+</html>
