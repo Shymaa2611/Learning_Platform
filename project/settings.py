@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'admin_berry',
     'pages',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -41,6 +42,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts'
 ]
+LOGIN_REDIRECT_URL = '/'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

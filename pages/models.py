@@ -9,3 +9,16 @@ class Contact(models.Model):
     message=models.CharField(max_length=500)
     def __str__(self):
         return self.email
+    
+
+class Blog(models.Model):
+    title=models.CharField(max_length=20,verbose_name='Title')
+    image=models.ImageField(upload_to='blog/')
+    description=models.CharField(max_length=200)
+    content=models.TextField()
+    created_at=models.DateTimeField(auto_now_add=True)
+    updated_at=models.DateTimeField(auto_now_add=True)
+    def __str__(self):
+        return self.title
+    
+

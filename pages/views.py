@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
-from .models import Contact
+from .models import Contact,Blog
 from .forms import contactForm
+
 
 def index(request):
     return render(request,'pages/index.html')
@@ -21,3 +22,7 @@ def contact(request):
         'form':form
     }
     return render(request,'pages/contact.html',context)
+
+def blog(request):
+    bl=Blog.objects.all()
+    return render(request,'pages/blog.html',{'blogs':bl})
