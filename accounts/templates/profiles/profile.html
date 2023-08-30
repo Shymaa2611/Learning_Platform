@@ -1,0 +1,190 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Profile</title>
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}" />
+    <link rel="stylesheet" href="fonts/remixicon.css" />
+  </head>
+
+  <body>
+    <span class="main_bg"></span>
+    <div class="container">
+      <header>
+        <div class="brandLogo">
+          <figure>
+            <img
+              src="{% static 'IMG/3d-company-logos-design-logo-online-2.png' %}"
+              alt="logo"
+              width="40px"
+              height="40px"
+            />
+          </figure>
+          <span>HELp</span>
+        </div>
+      </header>
+      <section class="userProfile card">
+        <div class="profile">
+          <figure>
+            <img
+              src="{% static 'IMG/647c106477f8934b266ba39c_profile-picture-og.webp' %}"
+              alt="profile"
+              width="250px"
+              height="250px"
+            />
+          </figure>
+        </div>
+      </section>
+      <section class="work_skills card">
+        <div class="work">
+          <h1 class="heading">Profile</h1>
+          <div class="primary">
+            <h1>Front-End Developer</h1>
+            <p>
+              My skills<br />
+              HTML,CSS,BOOTSTRAP and JAVASCRIPT
+            </p>
+          </div>
+
+       
+        </div>
+        <div class="skills">
+          <h1 class="heading">Level One</h1>
+          <ul>
+            <li style="--i: 0">HTML</li>
+            <li style="--i: 1">CSS</li>
+            <li style="--i: 2">BOOTSTRAP</li>
+            <li style="--i: 3">JAVASCRIPT</li>
+          </ul>
+        </div>
+      </section>
+      <section class="userDetails card">
+        <div class="userName">
+          <h1 class="name">Yasmen</h1>
+          <div class="map">
+            <i class="ri-map-pin-fill ri"></i>
+            <!-- <span>Minya</span> -->
+          </div>
+          <p>Front-End Developer</p>
+        </div>
+
+        <div class="rank">
+          <!-- <h1 class="heading">Courses</h1>
+          <span>20</span> -->
+          <div class="rating">
+            <i class="ri-star-fill rate"></i>
+            <i class="ri-star-fill rate"></i>
+            <i class="ri-star-fill rate"></i>
+            <i class="ri-star-fill rate"></i>
+            <i class="ri-star-fill rate underrate"></i>
+          </div>
+        </div>
+
+        <div class="btns">
+          <ul>
+            <li class="sendMsg">
+              <i class="ri-chat-4-fill ri"></i>
+              <a href="#">Setting</a>
+            </li>
+
+            <li class="sendMsg active">
+              <i class="ri-check-fill ri"></i>
+              <a href="#">Chat Group</a>
+            </li>
+
+            <li class="sendMsg">
+              <a href="#">Start Interview</a>
+            </li>
+
+            <li class="sendMsg">
+              <a href="#">Competition</a>
+            </li>
+            <!-- list level 1,2,3 -->
+            <select id="inputState" class="form-select">
+              <option selected class="optionSelect">Levels...</option>
+              <option class="optionSelect">Level one</option>
+              <option class="optionSelect">Level two</option>
+              <option class="optionSelect">Level three</option>
+            </select>
+          </ul>
+        </div>
+      </section>
+      <section class="timeline_about card">
+        <div class="tabs">
+          <ul>
+            <li class="about active">
+              <i class="ri-user-3-fill ri"></i>
+              <span>About</span>
+            </li>
+
+            <li class="timeline details">
+              <i class="ri-eye-fill ri"></i>
+              <span>Details</span>
+            </li>
+
+            <li class="about challeges">
+              <i class="ri-user-3-fill ri"></i>
+              <span>Challenges</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="contact_Info">
+          <h1 class="heading">Contact Information</h1>
+          <ul>
+            <li class="site">
+              <h1 class="label">Full name:</h1>
+              <span class="info">Yasmen ahmed</span>
+            </li>
+            <li class="address">
+              <h1 class="label">Username:</h1>
+              <span class="info">yasmen345</span>
+            </li>
+
+            <li class="phone">
+              <h1 class="label">Phone:</h1>
+              <span class="info">+201150572037</span>
+            </li>
+            <li class="email">
+              <h1 class="label">E-mail:</h1>
+              <span class="info">yasmenahmed39679@gmail.com</span>
+            </li>
+          </ul>
+        </div>
+        <div class="details-Info hiddenClass">
+          <table>
+            <thead>
+              <tr>
+                <th>Tasks</th>
+                <th>Deadline</th>
+                <th>Rate</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td id="cell"></td>
+                <td id="cell"></td>
+                <td id="cell"></td>
+              </tr>
+              <tr>
+                <td id="cell"></td>
+                <td id="cell"></td>
+                <td id="cell"></td>
+              </tr>
+              <tr>
+                <td id="cell"></td>
+                <td id="cell"></td>
+                <td id="cell"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="challenges-Info hiddenClass"></div>
+      </section>
+    </div>
+    <script src="{% static 'js/profile.js' %}"></script>
+  </body>
+</html>
