@@ -1,5 +1,4 @@
 from django.db import models
-from django.contrib.auth.models import User
 
 class Contact(models.Model):
     first_name=models.CharField(max_length=20,verbose_name='First Name')
@@ -11,6 +10,7 @@ class Contact(models.Model):
         return self.email
     
 
+
 class Blog(models.Model):
     title=models.CharField(max_length=20,verbose_name='Title')
     image=models.ImageField(upload_to='blog/')
@@ -21,4 +21,36 @@ class Blog(models.Model):
     def __str__(self):
         return self.title
     
+class Track(models.Model):
+    track=models.CharField(max_length=30)
+
+class Courses(models.Model):
+    course=models.CharField(max_length=50)
+    track=models.ForeignKey(Track,on_delete=models.CASCADE)
+    def __str__(self):
+        return f"course for track {self.track}"
+class Levels(models.Model):
+    level=models.CharField(max_length=20)
+    track=models.ForeignKey(Track,models.CASCADE)
+    content=models.TextField()
+
+class Material(models.Model):
+    material=models.FileField(upload_to='materials/')
+    track=models.ForeignKey(Track,on_delete=models.CASCADE)
+    def __str__(self):
+        return f"course for track {self.track}"
+    
+class Skills(models.Model):
+    skill=models.CharField(max_length=20)
+    def __str__(self):
+        return self.skill
+
+class Task(models.Model):
+    task=models.FileField(upload_to='Tasks/')
+    deadline=models.TimeField()
+    rate=models.DecimalField(max_digits=10,decimal_places=5)
+    def __str__(self):
+        return f"{self.user.first_name} {self.user.last_name}"
+
+
 

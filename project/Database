@@ -1,0 +1,41 @@
+===================== database tables ===================
+- User
+   1- first_name
+   2- last_name
+   3- email
+   4- Mobile
+   5- password
+   6- image
+   7- track  (foreign key)
+   8- image
+
+- Task
+   2- task
+   3- deadline
+   5- rate
+
+- Tracks
+   1- name
+   2- content
+   3- 
+
+- Levels
+   1- track (foreign key)
+   2- level name
+   3- content
+=============================================================
+
+- Profile
+   1- user  (one to one) 
+   3- level (foregin key)
+   4- task  (foregin key)
+============================================================
+
+-Blog
+   1- title
+   2- description
+   3- content
+   4- created_at
+   5- updated_at
+   
+
