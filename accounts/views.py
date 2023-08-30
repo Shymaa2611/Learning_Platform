@@ -1,10 +1,17 @@
-from django.shortcuts import render
-from django.views.generic import CreateView
+from django.shortcuts import render,redirect
 from .forms import authenticationForm
-from django.contrib.auth.models import User
 
-class signUp(CreateView):
-    form_class=authenticationForm
-    context_object_name='form'
-    template_name='authentication/signUp.html'
-    success_url='/'
+
+def signup(request):
+    if request.method == 'POST':
+        form =authenticationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            return redirect('profile')
+    else:
+        form = authenticationForm
+    return render(request, 'authentication/signUp.html', {'form': form})
+
+
+def profile(request):
+    return render(request,'profiles/profile.html')
