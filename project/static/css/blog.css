@@ -1,76 +1,116 @@
+@import url("https://fonts.goggleapis.com/css?family=Poppins::200,300,400,500,600,700,800,900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
-  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
   box-sizing: border-box;
 }
-.b-example-divider {
-  height: 1rem;
-  background-color: #465358;
-  border: solid #fff;
-  border-width: 1px 0;
-  box-shadow: inset 0 0.5em 1.5em #fff, inset 0 0.125em 0.5em #fff;
-}
 body {
-  background-color: #465358;
-  margin: 0;
-  padding: 0;
-}
-
-.card {
-  border-radius: 20px;
-  overflow: hidden;
-  z-index: 1;
-  transition: 0.5s;
-  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
-}
-.card:hover {
-  color: #fff;
-}
-.card::before {
-  content: "";
-  position: absolute;
-  left: -100%;
-  top: 0%;
-  background-color:#465358;
-  width: 100%;
-  height: 100%;
-  transition: 0.5s;
-  z-index: -1;
-}
-.card:hover::before {
-  left: 0%;
-}
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: #777575;
-}
-::-webkit-scrollbar-thumb {
-  background: #465358;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #465358;
-}
-
-.up {
-  font-size: 40px;
-  color: #e60404;
-  position: fixed;
-  bottom: 10px;
-  right: 20px;
   display: flex;
   justify-content: center;
-  border: 5px solid rgb(238, 12, 12);
-  border-radius: 10%;
-  padding: 5px;
-  z-index: 99999;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 100vh;
+  background: #232427;
 }
-@media (min-width: 992px) {
-  .rounded-lg-3 {
-    border-radius: 0.3rem;
-  }
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 40px 0;
+}
+.container .card {
+  position: relative;
+  /* width */
+  min-width: 320px;
+  height: 440px;
+  box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2),
+    inset -5px -5px 15px rgba(255, 255, 255, 0.1),
+    5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  margin: 30px;
+}
+.container .card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+}
+.container .card .box {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  background: #2a2b2f;
+  border: 2px solid #1e1f23;
+  border-radius: 15px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  transition: 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.container .card .box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+}
+.container .card .box:hover {
+  transform: translateY(-50px);
+  box-shadow: 0 40px 70px rgba(0, 0, 0, 0.5);
+}
+.container .card .box .content {
+  padding: 20px;
+  text-align: center;
+}
+.container .card .box .content h2 {
+  position: absolute;
+  top: -10px;
+  right: 30px;
+  font-size: 8em;
+  color: rgba(255, 255, 255, 0.05);
+}
+.container .card .box .content h3 {
+  font-size: 1.8em;
+  color: rgba(255, 255, 255, 0.5);
+  z-index: 1;
+  transition: 0.5s;
+}
+.container .card .box .content p {
+  font-size: 16px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.5);
+  z-index: 1;
+  transition: 0.5s;
+}
+.container .card .box .content a {
+  position: relative;
+  display: inline-block;
+  padding: 8px 20px;
+  background: #000;
+  margin-top: 15px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 400;
+  color: #fff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+.container .card:nth-child(1) .box .content a,
+.container .card:nth-child(2) .box .content a,
+.container .card:nth-child(3) .box .content a {
+  background: green;
 }

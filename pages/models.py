@@ -20,6 +20,8 @@ class Blog(models.Model):
     updated_at=models.DateTimeField(auto_now_add=True)
     def __str__(self):
         return self.title
+    class Meta:
+        ordering=['id']
     
 class Track(models.Model):
     track=models.CharField(max_length=30)
