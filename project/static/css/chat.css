@@ -14,7 +14,7 @@
   --dark: #000;
   --green: #81d43a;
   --light-green: #e3ffcb;
-  --blue: #1775f1;
+  --blue: #0bf532;
   --light-blue: #d0e4ff;
   --dark-blue: #0c5fcd;
   --red: #fc3b56;
@@ -25,7 +25,7 @@ html {
 }
 
 body {
-  background: #465358;
+  background: black;
   overflow-x: hidden;
 }
 #content {
@@ -33,6 +33,7 @@ body {
   width: calc(100% - 50px);
   left: 25px;
   transition: all 0.3s ease;
+  margin-top: 20px;
 }
 
 main {
@@ -44,90 +45,14 @@ main .title {
   font-weight: 600;
   margin-bottom: 10px;
 }
-main .breadcrumbs {
-  display: flex;
-  grid-gap: 6px;
-}
-main .breadcrumbs li,
-main .breadcrumbs li a {
-  font-size: 14px;
-}
-main .breadcrumbs li a {
-  color: var(--blue);
-}
-main .breadcrumbs li a.active,
-main .breadcrumbs li.divider {
-  color: var(--dark-grey);
-  pointer-events: none;
-}
-main .info-data {
-  margin-top: 36px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  grid-gap: 20px;
-}
-main .info-data .card {
-  padding: 20px;
-  border-radius: 10px;
-  background: var(--light);
-  box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.05);
-}
-main .card .head {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-main .card .head h2 {
-  font-size: 24px;
-  font-weight: 600;
-}
-main .card .head p {
-  font-size: 14px;
-}
-main .card .head .icon {
-  font-size: 20px;
-  color: var(--green);
-}
-main .card .head .icon.down {
-  color: var(--red);
-}
-main .card .progress {
-  display: block;
-  margin-top: 24px;
-  height: 10px;
-  width: 100%;
-  border-radius: 10px;
-  background: var(--grey);
-  overflow-y: hidden;
-  position: relative;
-  margin-bottom: 4px;
-}
-main .card .progress::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  background: var(--blue);
-  width: var(--value);
-}
-main .card .label {
-  font-size: 14px;
-  font-weight: 700;
-}
-main .data {
-  display: flex;
-  grid-gap: 20px;
-  margin-top: 20px;
-  flex-wrap: wrap;
-}
+
 main .data .content-data {
   flex-grow: 1;
   flex-basis: 400px;
   padding: 20px;
-  background: var(--light);
+  background: rgb(82, 80, 80);
   border-radius: 10px;
-  box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: 4px 4px 8px 10px #a59a9a;
 }
 main .content-data .head {
   display: flex;
@@ -138,53 +63,6 @@ main .content-data .head {
 main .content-data .head h3 {
   font-size: 20px;
   font-weight: 600;
-}
-main .content-data .head .menu {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-main .content-data .head .menu .icon {
-  cursor: pointer;
-}
-main .content-data .head .menu-link {
-  position: absolute;
-  top: calc(100% + 10px);
-  right: 0;
-  width: 140px;
-  background: var(--light);
-  border-radius: 10px;
-  box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.1);
-  padding: 10px 0;
-  z-index: 100;
-  opacity: 0;
-  pointer-events: none;
-  transition: all 0.3s ease;
-}
-main .content-data .head .menu-link.show {
-  top: 100%;
-  opacity: 1;
-  pointer-events: visible;
-}
-main .content-data .head .menu-link a {
-  display: block;
-  padding: 6px 16px;
-  font-size: 14px;
-  color: var(--dark);
-  transition: all 0.3s ease;
-}
-main .content-data .head .menu-link a:hover {
-  background: var(--grey);
-}
-main .content-data .chart {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: auto;
-  scrollbar-width: none;
-}
-main .content-data .chart::-webkit-scrollbar {
-  display: none;
 }
 
 main .chat-box {
@@ -205,7 +83,6 @@ main .chat-box .day span {
   padding: 6px 12px;
   border-radius: 20px;
   background: var(--light-blue);
-  color: var(--blue);
   font-size: 12px;
   font-weight: 600;
 }
@@ -239,7 +116,7 @@ main .chat-box .chat p {
 }
 main .chat-box .msg:not(.me) .chat p {
   border-radius: 0 5px 5px 5px;
-  background: var(--blue);
+  background-color: var(--blue);
   color: var(--light);
 }
 main .chat-box .msg.me {
@@ -249,7 +126,7 @@ main .chat-box .msg.me .profile {
   text-align: right;
 }
 main .chat-box .msg.me p {
-  background: var(--grey);
+  background-color: #82ccdd;
   border-radius: 5px 0 5px 5px;
 }
 main form {
@@ -285,17 +162,11 @@ main .btn-send {
 main .btn-send:hover {
   background: var(--dark-blue);
 }
-/* MAIN */
-/* CONTENT */
 
 @media screen and (max-width: 768px) {
   #content {
     position: relative;
     width: calc(100% - 60px);
     transition: all 0.3s ease;
-  }
-  nav .nav-link,
-  nav .divider {
-    display: none;
   }
 }

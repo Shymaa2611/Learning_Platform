@@ -18,74 +18,24 @@
           <div class="content-data">
           <div class="content-data">
             <div class="head">
-              <h3>chatBot</h3>
-              <!-- <div class="menu">
-                <i class="bx bx-dots-horizontal-rounded icon"></i>
-                <ul class="menu-link">
-                  <li><a href="#">edit</a></li>
-                  <li><a href="#">save</a></li>
-                  <li><a href="#">remove</a></li>
-                </ul>
-              </div> -->
+              <h3 style="color: rgb(255, 255, 255);">chatBot</h3>
+             
             </div>
             <div class="chat-box">
-              <p class="day"><span>today</span></p>
-              <div class="msg">
-                <img src="{% static 'IMG/IMG.jpg' %}" alt="" />
-                <div class="chat">
-                  <div class="profile">
-                    <span class="username">Yasmen</span>
-                    <span class="time">18:30</span>
-                  </div>
-                  <p>hello</p>
-                </div>
+            
               </div>
               <div class="msg me">
-                <div class="chat">
-                  <div class="profile">
-                    <span class="time">20:30</span>
-                  </div>
-                  <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Consectetur voluptates ut quis quae, quidem obcaecati.
-                  </p>
+                <div class="chat"  id="chat-box">
+                  <div class="message received">Hello! How can I assist you today?</div>
+                
                 </div>
               </div>
-              <div class="msg me">
-                <div class="chat">
-                  <div class="profile">
-                    <span class="time">19:30</span>
-                  </div>
-                  <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Reiciendis, quae?
-                  </p>
-                </div>
-              </div>
-              <div class="msg me">
-                <div class="chat">
-                  <div class="profile">
-                    <span class="time">18:30</span>
-                  </div>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  </p>
-                </div>
-              </div>
-
-              <div class="msg me">
-                <div class="chat">
-                  <div class="profile">
-                    <span class="time">17:30</span>
-                  </div>
-                  <p>Lorem ipsum dolor sit amet.</p>
-                </div>
-              </div>
+            
             </div>
             <form action="#">
               <div class="form-group">
-                <input type="text" placeholder="Type....." />
-                <button type="submit" class="btn-send">
+                <input type="text" id="user-input" placeholder="Type....." />
+                <button type="submit" class="btn-send" id="send-btn">
                   <i class="bx bxs-send"></i>
                 </button>
               </div>
@@ -94,7 +44,43 @@
         </div>
       </main>
     </section>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+        var sendBtn = document.getElementById("send-btn");
+        var userInput = document.getElementById("user-input");
+        var chatBox = document.getElementById("chat-box");
+        sendBtn.addEventListener("click", function() {
+            var message = userInput.value.trim();
+            if (message !== "") {
+            appendMessage(message, "sent");
+            userInput.value = "";
+            scrollToBottom();
+            $.ajax({
+                url: "http://127.0.0.1:8000/google_bard_response/?prompt=" + message,
+                type: 'GET',
+                dataType: 'json', 
+                success: function(res) {
+                    console.log(res);
+                    appendMessage(res.message, "received");
+                }
+            });
+            }
+        });
 
+        function appendMessage(message, type) {
+            var messageElement = document.createElement("div");
+            messageElement.classList.add("message", type);
+            messageElement.innerText = message;
+            chatBox.appendChild(messageElement);
+        }
+
+        function scrollToBottom() {
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+        });
+
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
    
   </body>

@@ -150,7 +150,7 @@ STATICFILES_DIRS = [
 
 
     # Media files
-
+PAML_API_KEY='AIzaSyDjDsRr358VlL5AbzsotbiYHP_7xp_Oqf0'
 MEDIA_ROOT=os.path.join(BASE_DIR,"media")
 MEDIA_URL = "media/"
     

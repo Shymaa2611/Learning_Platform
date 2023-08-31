@@ -1,7 +1,11 @@
 from django.shortcuts import render,redirect
 from .models import Contact,Blog
 from .forms import contactForm
-
+from .google_bard import get_response
+from django.http import JsonResponse
+def google_bard_response(request):
+    response = get_response(request.GET.get('prompt'))
+    return JsonResponse({'message': response})
 
 def home(request):
     return render(request,'pages/home.html')
