@@ -23,12 +23,14 @@ def authentications(request):
     signup_form = authenticationForm(request.POST or None)
     
     if request.method == 'POST':
-        if 'login_submit' in request.POST and login_form.is_valid():
-            email = login_form.cleaned_data['email']
-            if User.objects.filter(email=email).exists():
+        if 'login_submit' in request.POST :
+            if login_form.is_valid():
+                login_form.save()
+                email = login_form.cleaned_data['email']
+                #if User.objects.filter(email=email).exists():
                 return redirect('profile')
             else:
-                return redirect('signUp')
+                 return redirect('signUp')
            
         elif 'signup_submit' in request.POST and signup_form.is_valid():
             signup_form.save()

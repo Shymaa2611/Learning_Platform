@@ -25,6 +25,8 @@ class Blog(models.Model):
     
 class Track(models.Model):
     track=models.CharField(max_length=30)
+    def __str__(self):
+        return self.track
 
 class Courses(models.Model):
     course=models.CharField(max_length=50)
