@@ -3,6 +3,8 @@ from .models import Contact,Blog
 from .forms import contactForm
 from .google_bard import get_response
 from django.http import JsonResponse
+
+
 def google_bard_response(request):
     response = get_response(request.GET.get('prompt'))
     return JsonResponse({'message': response})
@@ -15,8 +17,6 @@ def about(request):
 
 def chat(request):
     return render(request,'pages/chat.html')
-
-
 
 def contact(request):
     if request.method=='POST':

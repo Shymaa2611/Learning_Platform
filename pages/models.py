@@ -9,8 +9,6 @@ class Contact(models.Model):
     def __str__(self):
         return self.email
     
-
-
 class Blog(models.Model):
     title=models.CharField(max_length=20,verbose_name='Title')
     image=models.ImageField(upload_to='blog/')
@@ -37,6 +35,8 @@ class Levels(models.Model):
     level=models.CharField(max_length=20)
     track=models.ForeignKey(Track,models.CASCADE)
     content=models.TextField()
+    def __str__(self):
+        return self.level
 
 class Material(models.Model):
     material=models.FileField(upload_to='materials/')
@@ -54,7 +54,7 @@ class Task(models.Model):
     deadline=models.TimeField()
     rate=models.DecimalField(max_digits=10,decimal_places=5)
     def __str__(self):
-        return f"{self.user.first_name} {self.user.last_name}"
+        return str(self.task)
 
 
 

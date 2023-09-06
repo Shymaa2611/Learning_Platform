@@ -16,8 +16,6 @@
 
 - Tracks
    1- name
-   2- content
-   3- 
 
 - Levels
    1- track (foreign key)
@@ -29,6 +27,7 @@
    1- user  (one to one) 
    3- level (foregin key)
    4- task  (foregin key)
+   5- skill (many to many)
 ============================================================
 
 -Blog
@@ -38,4 +37,16 @@
    4- created_at
    5- updated_at
    
+============================================================
 
+- Books :-
+   1- title
+   2- price
+   3- description
+   4- image
+
+- cart :-
+   1- cart_id 
+   2- quentity
+   3- book
+   - total_price  (function)

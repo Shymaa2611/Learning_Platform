@@ -29,12 +29,21 @@
       <section class="userProfile card">
         <div class="profile">
           <figure>
+            {%if user.user.image %}
             <img
-              src="{% static 'IMG/647c106477f8934b266ba39c_profile-picture-og.webp' %}"
+              src="{{user.user.image.url}}"
               alt="profile"
               width="250px"
               height="250px"
             />
+            {%else%}
+            <img
+              src="{%static 'IMG/647c106477f8934b266ba39c_profile-picture-og.webp'%}"
+              alt="profile"
+              width="250px"
+              height="250px"
+            />
+            {%endif%}
           </figure>
         </div>
       </section>
@@ -42,17 +51,19 @@
         <div class="work">
           <h1 class="heading">Profile</h1>
           <div class="primary">
-            <h1>Front-End Developer</h1>
+            <h1>{{user.user.track.track}}</h1>
             <p>
               My skills<br />
-              HTML,CSS,BOOTSTRAP and JAVASCRIPT
+         
+              {{user.skill.skill}}
+             
             </p>
           </div>
 
        
         </div>
         <div class="skills">
-          <h1 class="heading">Level One</h1>
+          <h1 class="heading">{{user.level}}</h1>
           <ul>
             <li style="--i: 0">HTML</li>
             <li style="--i: 1">CSS</li>
@@ -63,12 +74,12 @@
       </section>
       <section class="userDetails card">
         <div class="userName">
-          <h1 class="name">{{username}}</h1>
+          <h1 class="name">{{user.user.username}}</h1>
           <div class="map">
             <i class="ri-map-pin-fill ri"></i>
             <!-- <span>Minya</span> -->
           </div>
-          <p>Front-End Developer</p>
+          <p>{{user.user.track.track}}</p>
         </div>
 
         <div class="rank">
@@ -137,20 +148,20 @@
           <ul>
             <li class="site">
               <h1 class="label">Full name:</h1>
-              <span class="info">Yasmen ahmed</span>
+              <span class="info">{{user.user.first_name}} {{user.user.last_name}}</span>
             </li>
             <li class="address">
               <h1 class="label">Username:</h1>
-              <span class="info">yasmen345</span>
+              <span class="info">{{user.user.username}}</span>
             </li>
 
             <li class="phone">
               <h1 class="label">Phone:</h1>
-              <span class="info">+201150572037</span>
+              <span class="info">{{user.user.mobile}}</span>
             </li>
             <li class="email">
               <h1 class="label">E-mail:</h1>
-              <span class="info">yasmenahmed39679@gmail.com</span>
+              <span class="info">{{user.user.email}}</span>
             </li>
           </ul>
         </div>
@@ -164,21 +175,13 @@
               </tr>
             </thead>
             <tbody>
+              
               <tr>
-                <td id="cell"></td>
-                <td id="cell"></td>
-                <td id="cell"></td>
+                <td id="cell">{{user.task.task}}</td>
+                <td id="cell">{{user.task.deadline}}</td>
+                <td id="cell">{{user.task.rate}}</td>
               </tr>
-              <tr>
-                <td id="cell"></td>
-                <td id="cell"></td>
-                <td id="cell"></td>
-              </tr>
-              <tr>
-                <td id="cell"></td>
-                <td id="cell"></td>
-                <td id="cell"></td>
-              </tr>
+              
             </tbody>
           </table>
         </div>

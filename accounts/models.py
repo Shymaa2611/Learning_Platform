@@ -8,10 +8,10 @@ class User(models.Model):
     username=models.CharField(max_length=20)
     first_name=models.CharField(max_length=20,verbose_name='First Name')
     last_name=models.CharField(max_length=20,verbose_name='Last Name')
-    email=models.EmailField(unique=True)
+    email=models.EmailField()
     password=models.CharField(max_length=50)
     mobile=models.CharField(max_length=11)
-    image=models.ImageField(upload_to='users/photos/')
+    image=models.ImageField(upload_to='users/photos/',blank=True,null=True)
     track=models.ForeignKey(Track,on_delete=models.CASCADE,blank=True,null=True)
     def __str__(self):
         return self.email 

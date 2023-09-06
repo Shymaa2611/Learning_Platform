@@ -28,15 +28,15 @@
     <div class="container">
       <div class="right">
         <img
-          src="{% static 'IMG/647c106477f8934b266ba39c_profile-picture-og.webp' %}"
+          src="{%static 'IMG/647c106477f8934b266ba39c_profile-picture-og.webp'%}"
           alt="profile-image"
           class="IMG"
         />
-        <h4>Yasmen Ahmed</h4>
-        <h6>emailAddress@gmail.com</h6>
-        <button for="profileing" class="btn btn-primary mt-2" id="selBtn" 
-          >Update Profile Image</button
-        >
+        <h4>{{user.first_name}} {{user.last_name}}</h4>
+        <h6>{{user.email}}</h6>
+       <input type="file" id="fileInput" style="display: none" accept="image/*">
+
+        <button for="profileing" class="btn btn-primary mt-2" id="selBtn">Update Profile Image</button>
       </div>
       <div class="left">
         <h2>Profile Setting</h2>
@@ -88,5 +88,11 @@
     <script src="{% static 'js/cdnjs.cloudflare.com_ajax_libs_jquery_3.7.0_jquery.min.js' %}"></script>
     <script src="{% static 'js/cdnjs.cloudflare.com_ajax_libs_popper.js_2.11.8_umd_popper.min.js' %}"></script>
     <script src="{% static 'js/cdnjs.cloudflare.com_ajax_libs_bootstrap_5.3.0_js_bootstrap.min.js' %}"></script>
+    <script>
+      document.getElementById('selBtn').addEventListener('click', function() {
+        // Trigger the file input when the button is clicked
+        document.getElementById('fileInput').click();
+      });
+      </script>
   </body>
 </html>
