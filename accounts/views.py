@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
-from .forms import authenticationForm,profileForm,LoginForm
+from .forms import authenticationForm,profileForm,LoginForm,UserProfileForm
 from .models import User,Profile
+from django.http import JsonResponse
 
 def authentications(request):
     login_form = LoginForm(request.POST or None)
@@ -27,13 +28,21 @@ def authentications(request):
 
 def profile(request):
     email = request.session.get('email', None)
+   
     if email:
         users = User.objects.filter(email=email)
         if users.exists():
             user = users.first()  
             profile = Profile.objects.filter(user=user)
-
-            return render(request, 'profiles/profile.html', {'user': profile.first()})
+            levels=profile.first().level.course.all()
+            skills=profile.first().skill.all()
+            context={
+                'user': profile.first(),
+                'levels':levels,
+                'skills':skills
+                
+                }
+            return render(request, 'profiles/profile.html',context)
         else:
            print("Error")
     
@@ -52,7 +61,6 @@ def settings(request):
     else:
         form = profileForm(instance=user)
     return render(request, 'profiles/settings.html', {'form': form,'user':user})
-
 
 
 

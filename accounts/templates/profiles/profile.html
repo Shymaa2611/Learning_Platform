@@ -35,13 +35,14 @@
               alt="profile"
               width="250px"
               height="250px"
+             
             />
             {%else%}
             <img
-              src="{%static 'IMG/647c106477f8934b266ba39c_profile-picture-og.webp'%}"
+              src="{%static 'IMG/defaultImage.png'%}"
               alt="profile"
-              width="250px"
-              height="250px"
+              width="200px"
+              height="200px"
             />
             {%endif%}
           </figure>
@@ -54,8 +55,9 @@
             <h1>{{user.user.track.track}}</h1>
             <p>
               My skills<br />
-         
-              {{user.skill.skill}}
+         {%for skill in skills%}
+         {{skill.skill}},
+         {%endfor%}
              
             </p>
           </div>
@@ -65,10 +67,9 @@
         <div class="skills">
           <h1 class="heading">{{user.level}}</h1>
           <ul>
-            <li style="--i: 0">HTML</li>
-            <li style="--i: 1">CSS</li>
-            <li style="--i: 2">BOOTSTRAP</li>
-            <li style="--i: 3">JAVASCRIPT</li>
+            {%for level in levels%}
+            <li style="--i: 0"><a href="#">{{level.title}}</a></li>
+            {%endfor%}
           </ul>
         </div>
       </section>

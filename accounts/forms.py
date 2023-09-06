@@ -20,4 +20,14 @@ class profileForm(forms.ModelForm):
         model=User
         fields=['username','email', 'password','first_name','last_name','mobile','track']
    
+class userLevel(forms.ModelForm):
+    class Meta:
+        model=Profile
+        fields=['level']
+   
+class UserProfileForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ['image']
+
 

@@ -27,14 +27,16 @@ class Track(models.Model):
         return self.track
 
 class Courses(models.Model):
+    title=models.CharField(max_length=20)
     course=models.CharField(max_length=50)
     track=models.ForeignKey(Track,on_delete=models.CASCADE)
+    poster=models.ImageField(upload_to='video/poster/',blank=True,null=True)
     def __str__(self):
-        return f"course for track {self.track}"
+        return f"course {self.title}  for track {self.track}"
 class Levels(models.Model):
     level=models.CharField(max_length=20)
     track=models.ForeignKey(Track,models.CASCADE)
-    content=models.TextField()
+    course=models.ManyToManyField(Courses)
     def __str__(self):
         return self.level
 
